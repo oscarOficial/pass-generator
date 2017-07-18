@@ -18,9 +18,12 @@ module.exports = (env = {}) => {
       publicPath: '/dist/',
       filename: 'bundle.js'
     },
+    resolve: {
+      // Add `.ts` and `.tsx` as a resolvable extension.
+      extensions: ['.ts', '.tsx', '.js'], // note if using webpack 1 you'd also need a '' in the array as well
+    },
     module: {
-      rules: [
-        {
+      rules: [{
           test: /\.js$/,
           loader: 'babel-loader',
           exclude: /node_modules/
@@ -31,8 +34,7 @@ module.exports = (env = {}) => {
         },
         {
           test: /\.css$/,
-          use: [
-            { loader: 'style-loader' },
+          use: [{ loader: 'style-loader' },
             { loader: 'css-loader' }
           ]
         },
@@ -44,6 +46,10 @@ module.exports = (env = {}) => {
         {
           test: /\.(ttf|eot|svg)$/,
           loader: 'file-loader'
+        },
+        {
+          test: /\.tsx?$/,
+          use: "ts-loader"
         }
       ]
     },
