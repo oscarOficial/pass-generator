@@ -1,4 +1,5 @@
 <template>
+  <require from="./left-panel.css"></require>
   <div class="navbar">
     <div class="navbar-inner">
       <div class="center">Menu</div>
@@ -7,7 +8,7 @@
   <div class="list-block">
     <ul>
       <li>
-        <a href="#site-list" class="item-link close-panel">
+        <a href="#" class="item-link close-panel" class.bind="pass.mainPassword ? '':'item-link-disabled'" click.delegate="navigateToView($event, 'site-list')">
           <div class="item-content">
             <div class="item-inner">
               <div class="item-title">Site List</div>

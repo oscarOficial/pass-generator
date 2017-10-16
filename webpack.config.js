@@ -53,6 +53,7 @@ module.exports = (env = {}) => {
         }
       ]
     },
+    externals: ["plugins", "platforms", "cordova-android"],
     plugins: [
       new AureliaWebPackPlugin(),
       new webpack.DefinePlugin({

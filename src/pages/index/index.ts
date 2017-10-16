@@ -21,9 +21,9 @@ export class Index {
   }
 
   @bindable mainPassword: string;
+  @bindable isPasswordMasked: boolean = true;
 
   setValues() {
-    console.log("mainPass: " + this.mainPassword);
-    this.passService.setVals(this.mainPassword);
+    this.passService.setVals(this.passService.mainPassword);
   }
 }

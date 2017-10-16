@@ -2,12 +2,13 @@ import {
   autoinject
 } from "aurelia-framework";
 import {
-  setUpFramework7
-} from "./services/f7.js";
+  F7
+} from "./services/f7";
 
 @autoinject
 export class App {
   constructor(
+    public F7: F7
   ) {
     this.views = [{
       name: 'index',
@@ -24,6 +25,6 @@ export class App {
   }
   views = [];
   attached() {
-    setUpFramework7();
+    this.F7.setUpFramework7();
   }
 }

@@ -1,5 +1,6 @@
 import {
-  autoinject
+  autoinject,
+  bindable
 } from "aurelia-framework";
 import {
   PasswordGenerator
@@ -31,6 +32,7 @@ export class PassService {
     , { seed: "yahoo", url: "https://login.yahoo.com/", displayName: "Yahoo" }
   ];
 
+  @bindable mainPassword: string;
 
   getSeedList(): Array<ISites> {
     return this.defaultSeedList;

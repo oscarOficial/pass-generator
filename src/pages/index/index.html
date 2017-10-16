@@ -28,13 +28,14 @@
   </div>
 
   <div class="list-block">
-    <ul>
+    <ul style="display: flex">
       <li>
         <div class="item-content">
           <div class="item-inner">
             <div class="item-title label">Main Password</div>
             <div class="item-input">
-              <input type="password" name="password" value.bind="mainPassword">
+              <input show.bind="isPasswordMasked" type="password" name="password" value.bind="passService.mainPassword">
+              <input show.bind="!isPasswordMasked" type="text" name="password" value.bind="passService.mainPassword">
             </div>
           </div>
         </div>
@@ -42,13 +43,21 @@
       <li>
         <div class="item-content">
           <div class="item-inner">
-            <div class="item-input"  click.delegate="setValues()">
-              <a href="#site-list" class="button">Set main Password</a>
+            <div class="item-title label">Mask Pasword?</div>
+            <div class="item-input">
+              <input id="isMaskChecbox" type="checkbox" checked.bind="isPasswordMasked">
             </div>
           </div>
         </div>
       </li>
     </ul>
+    <div class="item-content">
+        <div class="item-inner">
+          <div class="item-input" click.delegate="setValues()">
+            <a href="#site-list" class="button">Set main Password</a>
+          </div>
+        </div>
+      </div>
   </div>
 
 </template>
