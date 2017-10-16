@@ -19,6 +19,7 @@
     under the License.
 -->
 <html>
+
 <head>
     <!--
         Customize this policy to fit your own app's needs. For more guidance, see:
@@ -36,11 +37,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" type="text/css" href="src/css/ripple.css">
     <title>My App</title>
 </head>
+
 <body aurelia-app="main">
-    <div class="splash">Loading...</div>
+    <div class='uil-ripple-css' style='transform:scale(0.64);'>
+        <div></div>
+        <div></div>
+    </div>
     <script src="cordova.js"></script>
     <script src="dist/bundle.js"></script>
+    <script src="dist/0.bundle.js"></script>
 </body>
+
 </html>

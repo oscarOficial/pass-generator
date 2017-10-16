@@ -1,5 +1,10 @@
 <template>
-  <div class="content-block">
-    <p>Content Goes Here</p>
+  <require from="../../elements/password-input/password-input"></require>
+  <div class="list-block">
+    <ul>
+      <li repeat.for="site of seedList">
+        <password-input class="item-inner" site.bind="site"></password-input>
+      </li>
+    </ul>
   </div>
 </template>

@@ -1,0 +1,4 @@
+.item-link.close-panel.item-link-disabled {
+  color: lightgray;
+  pointer-events: none;
+}

@@ -10,7 +10,7 @@ module.exports = (env = {}) => {
   return {
     entry: {
       main: [
-        './src/main.js'
+        './src/main.ts'
       ]
     },
     output: {
@@ -53,6 +53,7 @@ module.exports = (env = {}) => {
         }
       ]
     },
+    externals: ["plugins", "platforms", "cordova-android"],
     plugins: [
       new AureliaWebPackPlugin(),
       new webpack.DefinePlugin({
