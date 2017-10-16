@@ -10,7 +10,7 @@ module.exports = (env = {}) => {
   return {
     entry: {
       main: [
-        './src/main.js'
+        './src/main.ts'
       ]
     },
     output: {
