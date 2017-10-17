@@ -19,8 +19,6 @@
     "aurelia-templating-binding": "^1.1.0",
     "aurelia-templating-resources": "^1.2.0",
     "aurelia-templating-router": "^1.0.1",
-    "cordova-android": "^6.3.0",
-    "cordova-plugin-whitelist": "^1.3.2",
     "framework7": "^1.5.2",
     "tslib": "^1.7.1"
   },
@@ -42,8 +40,6 @@
     "webpack-dev-server": "2.1.0-beta.12"
   },
   "cordova": {
-    "plugins": {
-      "cordova-plugin-whitelist": {}
-    }
+    "plugins": {}
   }
 }
