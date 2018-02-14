@@ -8,13 +8,16 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
   <link rel="stylesheet" type="text/css" href="src/css/ripple.css">
+  <link rel="stylesheet" type="text/css" href="src/css/reset.css">
   <title>My App</title>
 </head>
 <body aurelia-app="main">
-  <div class='uil-ripple-css' style='transform:scale(0.64);'>
-    <div></div>
-    <div></div>
-  </div>
+    <div class="uil-ripple-css-container">
+        <div class='uil-ripple-css'>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
   <script src="dist/bundle.js"></script>
 </body>
 </html>
