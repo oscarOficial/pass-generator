@@ -1,3 +1,4 @@
+import { PassService } from './services/pass-service';
 import {
   autoinject
 } from "aurelia-framework";
@@ -8,7 +9,8 @@ import {
 @autoinject
 export class App {
   constructor(
-    public F7: F7
+    public F7: F7,
+    private pass: PassService
   ) {
     this.views = [{
       name: 'index',

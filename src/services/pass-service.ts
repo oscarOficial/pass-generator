@@ -11,6 +11,7 @@ import {
 
 @autoinject
 export class PassService {
+  private _localStorageName: string = "pass_seed_list";
   constructor(
     private passgen: PasswordGenerator
   ) { }
@@ -34,16 +35,36 @@ export class PassService {
 
   @bindable mainPassword: string;
 
+  currentSeedList: Array<ISites>;
+
   getSeedList(): Array<ISites> {
-    return this.defaultSeedList;
+    const customSeeds = localStorage.getItem(this._localStorageName);
+
+    this.currentSeedList = customSeeds
+      ? JSON.parse(customSeeds)
+      : this.defaultSeedList;
+
+    return this.currentSeedList;
+  }
+
+  saveSeedList() {
+    if (this.currentSeedList && this.currentSeedList.length) {
+      localStorage.setItem(this._localStorageName, JSON.stringify(this.currentSeedList));
+    }
   }
 
   setVals(myPassword) {
-    console.log(`Hola : ${myPassword}`);
-    for (var i = 0; i < this.defaultSeedList.length; i++) {
-      this.passwordHash(this.defaultSeedList[i].seed, myPassword);
+    if (!myPassword) {
+      return;
+    }
+    for (var i = 0; i < this.currentSeedList.length; i++) {
+      this.passwordHash(this.currentSeedList[i].seed, myPassword);
     }
   }
+  reloadSeedList() {
+    //TODO
+  }
+
   private passwordHash(passbox, master) {
     var newpass = this.passgen.b64_sha1(master + ':' + passbox);
     newpass = newpass.substr(0, 8) + '1a' || "";

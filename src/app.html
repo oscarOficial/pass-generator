@@ -31,6 +31,14 @@
               </a>
               <!-- AURELIA-F7: Show the name of each page on the nav bar -->
               <div class="center">${view.navTitle}</div>
+              <div class="right" if.bind="!view.homepage">
+                <a href="#" class="link" click.delegate="pass.reloadSeedList()">
+                  <span>Reload</span>
+                </a>
+                <a href="#" class="link" click.delegate="pass.saveSeedList()">
+                  <span>Save</span>
+                </a>
+              </div>
             </div>
           </div>
           <div class="page-content">

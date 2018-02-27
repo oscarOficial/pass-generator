@@ -1,63 +1,67 @@
 <template>
-
-  <div class="card">
-    <div class="card-header">Why?</div>
-    <div class="card-content">
-      <div class="card-content-inner">
-        <p>Using the same password for multiple email, shopping and social networking websites is risky, it means that a security
-          breach at one website will compromise all your accounts, possibly even leading to identity theft.
-        </p>
-      </div>
-    </div>
-  </div>
-  <div class="card">
-    <div class="card-header">How?</div>
-    <div class="card-content">
-      <div class="card-content-inner">
-        <p>
-          So, the idea is that you memorise just one, reasonably long/secure master password and use that to generate a set of non-dictionary
-          passwords. Copy and paste the new password(s) into the website and set your web browser to remember them.
-        </p>
-        <p>
-          All the websites get different passwords, but you only have to remember one!
-        </p>
-      </div>
-      <div class="card-footer">Want to get started?
-        <br/> Just add Your master password in the bxw below and click the button ;)</div>
-    </div>
-  </div>
-
-  <div class="list-block">
-    <ul style="display: flex">
-      <li>
-        <div class="item-content">
-          <div class="item-inner">
-            <div class="item-title label">Main Password</div>
-            <div class="item-input">
-              <input show.bind="isPasswordMasked" type="password" name="password" value.bind="passService.mainPassword">
-              <input show.bind="!isPasswordMasked" type="text" name="password" value.bind="passService.mainPassword">
+  <div class="row">
+    <div class="col-100 tablet-50">
+      <div class="content-block">
+        <div class="card">
+          <div class="card-header">Why?</div>
+          <div class="card-content">
+            <div class="card-content-inner">
+              <p>Using the same password for multiple email, shopping and social networking websites is risky, it means that
+                a security breach at one website will compromise all your accounts, possibly even leading to identity theft.
+              </p>
             </div>
           </div>
         </div>
-      </li>
-      <li>
-        <div class="item-content">
-          <div class="item-inner">
-            <div class="item-title label">Mask Pasword?</div>
-            <div class="item-input">
-              <input id="isMaskChecbox" type="checkbox" checked.bind="isPasswordMasked">
-            </div>
-          </div>
-        </div>
-      </li>
-    </ul>
-    <div class="item-content">
-        <div class="item-inner">
-          <div class="item-input" click.delegate="setValues()">
-            <a href="#site-list" class="button">Set main Password</a>
+        <div class="card">
+          <div class="card-header">How?</div>
+          <div class="card-content">
+            <div class="card-content-inner">
+              <p>
+                So, the idea is that you memorise just one, reasonably long/secure master password and use that to generate a set of non-dictionary
+                passwords. Copy and paste the new password(s) into the website and set your web browser to remember them.
+              </p>
+              <p>
+                All the websites get different passwords, but you only have to remember one!
+              </p>
+            </div> 
           </div>
         </div>
       </div>
-  </div>
+    </div>
+    <div class="col-100 tablet-50">
+      <div class="content-block">
+        <ul class="list-block">
+          <li>
+            <div class="item-content">
+              <div class="item-inner">
+                <div class="item-title label">Main Password</div>
+                <div class="item-input">
+                  <input show.bind="isPasswordMasked" type="password" name="password" value.bind="passService.mainPassword">
 
+                  <input show.bind="!isPasswordMasked" type="text" name="password" value.bind="passService.mainPassword">
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="item-content">
+              <div class="item-inner">
+                <div class="item-title label">Mask Pasword?</div>
+                <div class="item-input">
+                  <input id="isMaskChecbox" type="checkbox" checked.bind="isPasswordMasked">
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="item-content">
+          <div class="item-inner">
+            <div class="item-input" click.delegate="setValues()">
+              <a href="#site-list" class="button">Set main Password</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>

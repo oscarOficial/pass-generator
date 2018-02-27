@@ -16,10 +16,10 @@ export class LeftPanel {
   ){}
 
   navigateToView(event: Event, idView: string){
-    if(this.pass.mainPassword == void 0){
-      event.preventDefault();
-      return;
-    }
+    // if(this.pass.mainPassword == void 0){
+    //   event.preventDefault();
+    //   return;
+    // }
     
     this.f7.mainView.router.load({pageName: idView});
   }

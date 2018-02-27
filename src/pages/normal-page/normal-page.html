@@ -1,10 +1,52 @@
 <template>
   <require from="../../elements/password-input/password-input"></require>
-  <div class="list-block">
-    <ul>
-      <li repeat.for="site of seedList">
-        <password-input class="item-inner" site.bind="site"></password-input>
+  <require from="./password-input.css"></require>
+  <form class="list-block">
+    <div class="row">
+      <div class="col-100 tablet-75">
+        <ul>
+          <li>
+            <div class="item-content">
+              <div class="item-inner">
+                <div class="item-title item-label">Name</div>
+                <div class="item-input">
+                  <input type="text" name="name" value.bind="currentSite.displayName" placeholder="Site's name" required />
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="item-content">
+              <div class="item-inner">
+                <div class="item-title item-label">URL</div>
+                <div class="item-input">
+                  <input type="text" name="url" value.bind="currentSite.url" placeholder="Site's URL" required />
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="col-100 tablet-25">
+        <div class="content-block" style="height: 150px;">
+          <div class="align-vertical">
+            <button class="button button-fill" click.delegate="addSite()" style="margin-right:16px;">Add</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+
+
+  <ul class="list-block sortable">
+    <div class="row">
+      <li repeat.for="site of seedList" class="col-100 tablet-50">
+        <div class="pass-list-item-wrap">
+          <password-input class="item-title" site.bind="site"></password-input>
+          <button class="button button-fill" click.delegate="deleteSite(site)" style="margin-right:16px;">Delete</button>
+        </div>
       </li>
-    </ul>
-  </div>
+    </div>
+  </ul>
+
 </template>
