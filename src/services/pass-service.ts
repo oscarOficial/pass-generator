@@ -12,9 +12,6 @@ import {
 @autoinject
 export class PassService {
   private _localStorageName: string = "pass_seed_list";
-  constructor(
-    private passgen: PasswordGenerator
-  ) { }
   private defaultSeedList: Array<ISites> = [
     { seed: "amazon", url: "https://www.amazon.com/", displayName: "Amazon" }
     , { seed: "apple", url: "https://www.apple.com/", displayName: "Apple" }
@@ -32,6 +29,13 @@ export class PassService {
     , { seed: "wordpress", url: "https://www.wordpress.com/", displayName: "WordPress" }
     , { seed: "yahoo", url: "https://login.yahoo.com/", displayName: "Yahoo" }
   ];
+  
+  constructor(
+    private passgen: PasswordGenerator
+  ) {
+    this.initializedSeeds();
+   }
+
 
   @bindable mainPassword: string;
 
@@ -61,6 +65,7 @@ export class PassService {
       this.passwordHash(this.currentSeedList[i].seed, myPassword);
     }
   }
+
   reloadSeedList() {
     //TODO
   }
@@ -70,5 +75,9 @@ export class PassService {
     newpass = newpass.substr(0, 8) + '1a' || "";
 
     document.getElementById(passbox).setAttribute('value', newpass);
+  }
+
+  initializedSeeds(){
+    this.currentSeedList = this.getSeedList();
   }
 }

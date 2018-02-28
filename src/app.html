@@ -31,11 +31,11 @@
               </a>
               <!-- AURELIA-F7: Show the name of each page on the nav bar -->
               <div class="center">${view.navTitle}</div>
-              <div class="right" if.bind="!view.homepage">
-                <a href="#" class="link" click.delegate="pass.reloadSeedList()">
+              <div class="right" if.bind="view.name =='site-list-edit'">
+                <a href="#" class="link" click.delegate="reload()">
                   <span>Reload</span>
                 </a>
-                <a href="#" class="link" click.delegate="pass.saveSeedList()">
+                <a href="#" class="link" click.delegate="save()">
                   <span>Save</span>
                 </a>
               </div>

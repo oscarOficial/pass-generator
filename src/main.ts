@@ -9,6 +9,6 @@ export function configure(aurelia) {
   aurelia.start().then(() => {
     setTimeout(() => {
       aurelia.setRoot('app', document.body);
-    }, 1000)
+    }, 1000);
   })
 }

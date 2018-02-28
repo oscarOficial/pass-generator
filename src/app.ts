@@ -19,14 +19,25 @@ export class App {
       nav: true,
       homepage: true
     }, {
-      name: 'site-list',
-      navTitle: 'Site List',
-      moduleId: './pages/normal-page/normal-page',
+      name: 'pass-list',
+      navTitle: 'Site Password List',
+      moduleId: './pages/pass-page/pass-page',
       nav: true
-    }]
+    }, {
+      name: 'site-list-edit',
+      navTitle: 'Sites Edit',
+      moduleId: './pages/edit-page/edit-page',
+      nav: true
+    }];
   }
   views = [];
   attached() {
     this.F7.setUpFramework7();
+  }
+  reload(){
+    this.pass.reloadSeedList();
+  }
+  save(){
+    this.pass.saveSeedList();
   }
 }

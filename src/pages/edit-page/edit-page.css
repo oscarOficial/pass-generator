@@ -1,0 +1,20 @@
+.list-block.inputs-list .item-inner.item-inner-side-by-side {
+  display: flex;
+}
+
+.list-block.inputs-list .item-inner.item-inner-side-by-side .item-title {
+  display: flex;
+  flex-grow: 1;
+}
+
+.list-block.inputs-list .item-inner.item-inner-side-by-side .item-title>div {
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+.align-vertical{
+  display: flex;
+  height: 100%;;
+  align-items: center;
+  justify-content: center;
+}

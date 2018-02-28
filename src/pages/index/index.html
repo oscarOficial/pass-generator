@@ -23,13 +23,13 @@
               <p>
                 All the websites get different passwords, but you only have to remember one!
               </p>
-            </div> 
+            </div>
           </div>
         </div>
       </div>
     </div>
     <div class="col-100 tablet-50">
-      <div class="content-block">
+      <form class="content-block">
         <ul class="list-block">
           <li>
             <div class="item-content">
@@ -56,12 +56,10 @@
         </ul>
         <div class="item-content">
           <div class="item-inner">
-            <div class="item-input" click.delegate="setValues()">
-              <a href="#site-list" class="button">Set main Password</a>
-            </div>
+            <button type="submit" click.delegate="showPasswords()" class="button button-fill">Set password</button>
           </div>
         </div>
-      </div>
+      </form>
     </div>
   </div>
 </template>

@@ -1,10 +1,8 @@
 /* eslint-disable no-undef */
 import {
   autoinject,
-  bindable,
-  observable
+  bindable
 } from "aurelia-framework";
-import { PassService } from './../../services/pass-service';
 
 var PLATFORM: string;
 var PRODUCTION: string;
@@ -13,9 +11,7 @@ export class Index {
   private platform: string;
   private enviromment: string;
 
-  constructor(
-    private passService: PassService
-  ) {
+  constructor() {
     this.platform = PLATFORM
     this.enviromment = PRODUCTION ? 'production' : 'development'
   }
@@ -23,7 +19,17 @@ export class Index {
   @bindable mainPassword: string;
   @bindable isPasswordMasked: boolean = true;
 
-  setValues() {
-    this.passService.setVals(this.passService.mainPassword);
+  showPasswords(event) {
+    return;
+    // event.preventDefault();
+
+    // this.F7.mainView.router.load({pageName: 'pass-lis'});
+    // this.setMainPassword();
+  }
+  setMainPassword() {
+    return;
+    // this.pass.setVals(this.pass.mainPassword);
+
+    // this.pass.reloadSeedList();
   }
 }

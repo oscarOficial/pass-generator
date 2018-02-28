@@ -1,0 +1,12 @@
+<template>
+  <require from="../../elements/password-input/password-input"></require>
+  
+  <ul class="list-block">
+    <div class="row">
+      <li repeat.for="site of pass.currentSeedList" class="col-100 tablet-50">
+        <password-input site.bind="site"></password-input>
+      </li>
+    </div>
+  </ul>
+
+</template>
